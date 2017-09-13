@@ -13,8 +13,8 @@ class UploadsController < ApplicationController
 
   private
   def upload_params #segundo metodo creado
-  	params.require(:uploads).permit(:image) #aqui decimos que solo permita imagenes
-  	
+  	params.require(:upload).permit(:image) #aqui decimos que solo permita imagenes
+
   end
 
 end
