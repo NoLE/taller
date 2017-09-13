@@ -5,7 +5,7 @@ class UploadsController < ApplicationController
   def create #primer metodo creado
   	@upload = Uploads.create(upload_params)
   	if @upload.save
-  		render json: {message:"success"}, :status => 200
+  		render json: {message:"success", fileId: @upload.id}, :status => 200
   	else
   		render json: {message: @upload.errors.full_messages.join(',')}, :status => 400
   	end
