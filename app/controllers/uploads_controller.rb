@@ -1,9 +1,10 @@
 class UploadsController < ApplicationController
   def new
+    @upload = Upload.new
   end
 
   def create #primer metodo creado
-  	@upload = Uploads.create(upload_params)
+  	@upload = Upload.create(upload_params)
   	if @upload.save
   		render json: {message:"success", fileId: @upload.id}, :status => 200
   	else
